@@ -148,13 +148,26 @@ Binaries for each language servers must be installed from their relevant repo. M
   npm i -g pyright
   ```
 
-- **YAML**: yamlls
+- **Java**: jdtls
+  Installing from AUR, the default folder will be `/usr/java/jdtls`, and trying to run it will give a "Permission denied". You probably can somehow bypass this, I just chose the easy way: installing from the lsp script.
 
-  This install requires `yarn` to work
-
-  ```bash
-  yarn global add yaml-language-server
   ```
+  :LspInstall jdtls
+  ```
+  And add `export JDTLS_HOME="$HOME/.local/share/nvim/lsp_servers/jdtls/"` to your `.bashrc` or `.zshrc` (depending on which you use).
+
+- **OCaml**: ocamllsp
+  You can install it from opam, but easier will be to just use the lsp installer again.
+
+  ```
+  :LspInstall ocamllsp
+  ```
+
+- **Ruby**: solargraph
+  You need to install `rbenv`, add `eval "$(rbenv init -)"` to your `xprofile` (so it runs at startup), and run `gem install solargraph`.
+
+- **Racket**: racket-langserver
+  You need to have racket installec, and run `raco pkg install racket-langserver`.
 
 If a module complains about the verion of node being too old (pyright will do this), then run the following:
 ```bash
