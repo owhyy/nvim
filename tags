@@ -1,0 +1,52 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/snooze/.config/nvim/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+Attributions	README.md	/^## Attributions$/;"	s	chapter:Neovim configuration with Lua
+Auto-completion	README.md	/^## Auto-completion$/;"	s	chapter:Neovim configuration with Lua
+Installing the configuration	README.md	/^## Installing the configuration$/;"	s	chapter:Neovim configuration with Lua
+Installing the language servers	README.md	/^### Installing the language servers$/;"	S	section:Neovim configuration with Lua""Auto-completion
+M.common_on_attach	lua/lsp/utils.lua	/^function M.common_on_attach(client, bufnr)$/;"	f
+M.exprinoremap	lua/utils.lua	/^function M.exprinoremap(lhs, rhs) M.exprnoremap('i', lhs, rhs) end$/;"	f
+M.exprnnoremap	lua/utils.lua	/^function M.exprnnoremap(lhs, rhs) M.exprnoremap('n', lhs, rhs) end$/;"	f
+M.exprnoremap	lua/utils.lua	/^function M.exprnoremap(mode, lhs, rhs)$/;"	f
+M.inoremap	lua/utils.lua	/^function M.inoremap(lhs, rhs) M.noremap('i', lhs, rhs) end$/;"	f
+M.map	lua/utils.lua	/^function M.map(mode, lhs, rhs)$/;"	f
+M.markdown_preview	lua/plugins/markdown-preview.lua	/^M.markdown_preview = function()$/;"	f
+M.nmap	lua/utils.lua	/^function M.nmap(lhs, rhs) M.map('n', lhs, rhs) end$/;"	f
+M.nnoremap	lua/utils.lua	/^function M.nnoremap(lhs, rhs) M.noremap('n', lhs, rhs) end$/;"	f
+M.noremap	lua/utils.lua	/^function M.noremap(mode, lhs, rhs)$/;"	f
+M.tnoremap	lua/utils.lua	/^function M.tnoremap(lhs, rhs) M.noremap('t', lhs, rhs) end$/;"	f
+M.vnoremap	lua/utils.lua	/^function M.vnoremap(lhs, rhs) M.noremap('v', lhs, rhs) end$/;"	f
+M.xmap	lua/utils.lua	/^function M.xmap(lhs, rhs) M.map('x', lhs, rhs) end$/;"	f
+M.xnoremap	lua/utils.lua	/^function M.xnoremap(lhs, rhs) M.noremap('x', lhs, rhs) end$/;"	f
+Neovim configuration with Lua	README.md	/^# Neovim configuration with Lua$/;"	c
+Setting up	README.md	/^## Setting up$/;"	s	chapter:Neovim configuration with Lua
+Some further notes	README.md	/^### Some further notes$/;"	S	section:Neovim configuration with Lua""Auto-completion
+TODO:	README.md	/^## TODO:$/;"	s	chapter:Neovim configuration with Lua
+Web-dev Icons	README.md	/^## Web-dev Icons$/;"	s	chapter:Neovim configuration with Lua
+['<C-Space>']	lua/plugins/cmp.lua	/^    ['<C-Space>'] = function(fallback)$/;"	f
+['<S-Tab>']	lua/plugins/cmp.lua	/^    ['<S-Tab>'] = function(fallback)$/;"	f
+['<Tab>']	lua/plugins/cmp.lua	/^    ['<Tab>'] = function(fallback)$/;"	f
+bufnnoremap	lua/lsp/utils.lua	/^  local function bufnnoremap(lhs, rhs)$/;"	f
+config	lua/plugins.lua	/^        config = function() require('Comment').setup() end$/;"	f
+config	lua/plugins.lua	/^        config = function() require('plugins.cmp') end$/;"	f
+config	lua/plugins.lua	/^        config = function() require('plugins.lspconfig') end$/;"	f
+config	lua/plugins.lua	/^        config = function() require('plugins.lualine') end$/;"	f
+config	lua/plugins.lua	/^        config = function() require('plugins.nvimtree') end -- Must add this manually$/;"	f
+config	lua/plugins.lua	/^        config = function() require('plugins.telescope') end$/;"	f
+config	lua/plugins.lua	/^        config = function() require('plugins.treesitter') end,$/;"	f
+error_msg	plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
+expand	lua/plugins/cmp.lua	/^    expand = function(args)$/;"	f
+get_snippets_rtp	lua/plugins/cmp.lua	/^local function get_snippets_rtp()$/;"	f
+save_profiles	plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
+time	plugin/packer_compiled.lua	/^    time = function(chunk, start) end$/;"	f
+time	plugin/packer_compiled.lua	/^    time = function(chunk, start)$/;"	f
+try_loadstring	plugin/packer_compiled.lua	/^local function try_loadstring(s, component, name)$/;"	f

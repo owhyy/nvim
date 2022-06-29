@@ -22,8 +22,8 @@ local opts = {
 }
 
 -- uncomment the one you prefer; i chose snipmate, because there's more snippets for the stuff I use
--- require('luasnip.loaders.from_vscode').lazy_load()
-require('luasnip.loaders.from_snipmate').lazy_load()
+require('luasnip.loaders.from_vscode').lazy_load()
+-- require('luasnip.loaders.from_snipmate').lazy_load()
 
 cmp.setup({
   -- Don't autocomplete, otherwise there is too much clutter
@@ -90,7 +90,9 @@ cmp.setup({
     {name = 'nvim_lua'},
     {name = 'path'},
     {name = 'buffer'},
---    {name = 'omni'},
+    {name = 'nvim_lsp_signature_help'},
+    {name = 'omni'},
+    {name = 'tags'},
     -- {name = 'calc'},
   },
 })
