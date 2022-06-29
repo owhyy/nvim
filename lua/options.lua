@@ -1,6 +1,6 @@
 -- Visual
 vim.o.conceallevel       = 0                             -- Don't hide quotes in markdown
-vim.o.cmdheight          = 1
+vim.o.cmdheight          = 0
 vim.o.pumheight          = 10
 vim.o.showmode           = false
 vim.wo.number            = true
@@ -30,6 +30,8 @@ vim.o.completeopt        = "menuone,noinsert,noselect"
 vim.o.wildmode           = "longest,full"                -- Display auto-complete in Command Mode
 -- vim.o.updatetime         = 300                           -- Delay until write to Swap and HoldCommand event
 
+vim.o.tpipeline_autoembed = 1
+
 -- Disable default plugins
 -- vim.g.loaded_netrwPlugin = false
 
@@ -41,8 +43,18 @@ vim.cmd [[
   let g:vimtex_view_method = 'zathura'
 ]]
 
+-- vim.cmd [[
+--   let g:tmuxline_powerline_separators = 0
+-- ]]
+-- let g:tpipeline_statusline = '%='
+vim.cmd [[
+  let g:tpipeline_split = 1
+  let g:tpipeline_usepane = 1
+  let g:tpipeline_fillcentre = 1
+]]
+
 -- Disable inline error messages
 vim.diagnostic.config {
-  virtual_text = false,
+  virtual_text = true,
   underline = false,            -- Keep error underline
 }

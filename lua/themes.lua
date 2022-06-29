@@ -1,4 +1,8 @@
--- vim.g.solarized_italic_comments = true
--- require('solarized').set('dark')
+vim.opt.termguicolors = true
 
-vim.cmd("colorscheme candle-grey")
+require('ayu').setup({
+    mirage = false, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
+})
+
+-- require('no-clown-fiesta')
+require('ayu').colorscheme()
