@@ -38,6 +38,7 @@ Web-dev Icons	README.md	/^## Web-dev Icons$/;"	s	chapter:Neovim configuration wi
 bufnnoremap	lua/lsp/utils.lua	/^  local function bufnnoremap(lhs, rhs)$/;"	f
 config	lua/plugins.lua	/^        config = function() require('Comment').setup() end$/;"	f
 config	lua/plugins.lua	/^        config = function() require('plugins.cmp') end$/;"	f
+config	lua/plugins.lua	/^        config = function() require('plugins.dapconfig') end$/;"	f
 config	lua/plugins.lua	/^        config = function() require('plugins.lspconfig') end$/;"	f
 config	lua/plugins.lua	/^        config = function() require('plugins.lualine') end$/;"	f
 config	lua/plugins.lua	/^        config = function() require('plugins.nvimtree') end -- Must add this manually$/;"	f
@@ -46,6 +47,7 @@ config	lua/plugins.lua	/^        config = function() require('plugins.treesitter
 error_msg	plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
 expand	lua/plugins/cmp.lua	/^    expand = function(args)$/;"	f
 get_snippets_rtp	lua/plugins/cmp.lua	/^local function get_snippets_rtp()$/;"	f
+pythonPath	lua/plugins/dapconfig.lua	/^    pythonPath = function()$/;"	f
 save_profiles	plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
 time	plugin/packer_compiled.lua	/^    time = function(chunk, start) end$/;"	f
 time	plugin/packer_compiled.lua	/^    time = function(chunk, start)$/;"	f

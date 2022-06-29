@@ -6,10 +6,7 @@ local cmd = vim.cmd
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 local packer_bootstrap
 if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({
-        'git', 'clone', 'https://github.com/wbthomason/packer.nvim',
-        install_path
-    })
+  packer_bootstrap = fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
 
 -- Rerun PackerCompile everytime pluggins.lua is updated
@@ -105,12 +102,64 @@ return require('packer').startup(function(use)
     use 'phha/zenburn.nvim'
     -- black colortheme
     use 'mrjones2014/lighthaus.nvim'
+    -- Treesitter
+    use({
+        'nvim-treesitter/nvim-treesitter',
+        config = function() require('plugins.treesitter') end,
+        run = ':TSUpdate'
+    })
+
+    -- Telescope
+    use({
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/plenary.nvim'}},
+        config = function() require('plugins.telescope') end
+    })
+
+    use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make'})
+    use 'p00f/nvim-ts-rainbow'
+
+    -- Latex
+    use "lervag/vimtex"
+
+    -- Better movement
+    use "ggandor/lightspeed.nvim"
+    -- Bracket thing
+    use "tpope/vim-surround"
+    -- Statusline
+    use({
+        "nvim-lualine/lualine.nvim",
+        config = function() require('plugins.lualine') end
+    })
+
+    -- Colorthemes
+    -- use 'shaunsingh/solarized.nvim'
+    -- Black colortheme
+    -- use 'aditya-azad/candle-grey'
+    -- use { "adisen99/codeschool.nvim", requires = { "rktjmp/lush.nvim" } }
+    -- zenburn
+    use 'phha/zenburn.nvim'
+    -- black colortheme
+    use 'mrjones2014/lighthaus.nvim'
     -- highlightedyank
     use 'machakann/vim-highlightedyank'
     -- smooth scrolling
     use 'karb94/neoscroll.nvim'
     require('neoscroll').setup()
 
+    -- Pascal linter
+    use 'dylanaraps/pascal_lint.nvim'
+    -- Racket better support
+    use 'wlangstroth/vim-racket'
+    -- Better SML support
+    use 'jez/vim-better-sml'
+    -- Pyret support
+    use 'rachitnigam/pyret-lang.vim'
+    -- black colorthemes
+    use 'mrjones2014/lighthaus.nvim'
+    use 'Shatur/neovim-ayu'
+    use 'aktersnurra/no-clown-fiesta.nvim'
+    use 'morhetz/gruvbox'
     -- Pascal linter
     use 'dylanaraps/pascal_lint.nvim'
     -- Racket better support
@@ -137,7 +186,7 @@ return require('packer').startup(function(use)
 
     -- Make statusline and tmux's statusline be the same
     use 'vimpostor/vim-tpipeline'
-
+    -- use 'edkolev/tmuxline.vim'
     -- Python text objects
     use 'jeetsukumaran/vim-pythonsense'
 
@@ -148,5 +197,12 @@ return require('packer').startup(function(use)
     use 'quangnguyen30192/cmp-nvim-tags'
     use 'ludovicchabant/vim-gutentags'
 
+    -- debugger
+    use 'rcarriga/nvim-dap-ui'
+    use 'mfussenegger/nvim-dap-python'
+    use {
+        'mfussenegger/nvim-dap',
+        config = function() require('plugins.dapconfig') end
+    }
     if packer_bootstrap then require('packer').sync() end
 end)
