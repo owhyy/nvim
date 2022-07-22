@@ -6,14 +6,10 @@ local cmd = vim.cmd
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 local packer_bootstrap
 if fn.empty(fn.glob(install_path)) > 0 then
-<<<<<<< HEAD
     packer_bootstrap = fn.system({
         'git', 'clone', 'https://github.com/wbthomason/packer.nvim',
         install_path
     })
-=======
-  packer_bootstrap = fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
->>>>>>> a1e7fffe591aa1bdfaf94e9132c223ef70865609
 end
 
 -- Rerun PackerCompile everytime pluggins.lua is updated
@@ -29,8 +25,8 @@ cmd([[packadd packer.nvim]])
 
 -- Initialize pluggins
 return require('packer').startup(function(use)
-  -- Let Packer manage itself
-  use({ 'wbthomason/packer.nvim', opt = true })
+    -- Let Packer manage itself
+    use({'wbthomason/packer.nvim', opt = true})
 
     -- Formatting
     use {
@@ -50,7 +46,8 @@ return require('packer').startup(function(use)
     use 'mfussenegger/nvim-jdtls' -- java lsp
 
     -- Autocomplete
-    use "L3MON4D3/LuaSnip" -- Snippet engine
+    use({"L3MON4D3/LuaSnip", config = function() require('plugins.luasnip') end}) -- Snippet engine
+
     use({
         "hrsh7th/nvim-cmp",
         -- Sources for nvim-cmp
@@ -77,6 +74,7 @@ return require('packer').startup(function(use)
         config = function() require('plugins.telescope') end
     })
 
+    use 'nvim-telescope/telescope-dap.nvim'
     use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make'})
     use 'p00f/nvim-ts-rainbow'
 
@@ -93,20 +91,20 @@ return require('packer').startup(function(use)
         config = function() require('plugins.lualine') end
     })
 
+    use {
+        'kyazdani42/nvim-tree.lua',
+        config = function() require('plugins.nvimtree') end,
+        requires = {
+            'kyazdani42/nvim-web-devicons' -- optional, for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
     -- Colorthemes
-    -- use 'shaunsingh/solarized.nvim'
-    -- Black colortheme
-    -- use 'aditya-azad/candle-grey'
-    -- use { "adisen99/codeschool.nvim", requires = { "rktjmp/lush.nvim" } }
-    -- zenburn
     use 'phha/zenburn.nvim'
-    -- black colortheme
     use 'mrjones2014/lighthaus.nvim'
-    -- highlightedyank
-    use 'machakann/vim-highlightedyank'
-    -- smooth scrolling
-    use 'karb94/neoscroll.nvim'
-    require('neoscroll').setup()
+    use 'Shatur/neovim-ayu'
+    use 'aktersnurra/no-clown-fiesta.nvim'
+    use 'folke/tokyonight.nvim'
 
     -- Pascal linter
     use 'dylanaraps/pascal_lint.nvim'
@@ -116,13 +114,11 @@ return require('packer').startup(function(use)
     use 'jez/vim-better-sml'
     -- Pyret support
     use 'rachitnigam/pyret-lang.vim'
-    -- black colorthemes
-    use 'mrjones2014/lighthaus.nvim'
-    use 'Shatur/neovim-ayu'
-    use 'aktersnurra/no-clown-fiesta.nvim'
-    use 'morhetz/gruvbox'
-    -- highlightedyank
-    use 'machakann/vim-highlightedyank'
+    -- Indent lines
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function() require('plugins.indent-blankline') end
+    }
     -- smooth scrolling
     use 'karb94/neoscroll.nvim'
     require('neoscroll').setup()
@@ -134,7 +130,7 @@ return require('packer').startup(function(use)
     use 'folke/trouble.nvim'
 
     -- Make statusline and tmux's statusline be the same
-    use 'vimpostor/vim-tpipeline'
+    -- use 'vimpostor/vim-tpipeline'
     -- use 'edkolev/tmuxline.vim'
     -- Python text objects
     use 'jeetsukumaran/vim-pythonsense'
@@ -148,10 +144,28 @@ return require('packer').startup(function(use)
 
     -- debugger
     use 'rcarriga/nvim-dap-ui'
+    use 'theHamsta/nvim-dap-virtual-text'
     use 'mfussenegger/nvim-dap-python'
     use {
         'mfussenegger/nvim-dap',
         config = function() require('plugins.dapconfig') end
     }
+
+    -- autopairs
+    use 'windwp/nvim-autopairs'
+    require('nvim-autopairs').setup({
+        disable_filetype = {"TelescopePrompt", "markdown"}
+    })
+    -- zettelkasetn
+    use("mickael-menu/zk-nvim")
+    require("zk").setup {}
+
+    use('norcalli/nvim-colorizer.lua')
+    require('colorizer').setup()
     if packer_bootstrap then require('packer').sync() end
+
+    use {
+        "folke/which-key.nvim",
+        config = function() require("which-key").setup {} end
+    }
 end)

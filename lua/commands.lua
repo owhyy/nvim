@@ -12,8 +12,16 @@ vim.cmd('command! CleanSwap !rm -rf ~/.local/share/nvim/swap/')
 vim.cmd("command! HelpTags Telescope help_tags")
 
 -- autocompile dwm and dwmblocks when saving (not working for some reason :( )
-vim.cmd [[autocmd BufWritePost ~/.local/src/dwm/config.h !cd ~/.local/src/dwm/; sudo make install && {killall -q dwm;setsid -f dwm}]]
-vim.cmd [[autocmd BufWritePost ~/.local/src/dwmblocks/blocks.h !cd ~/.local/src/dwmblocks/; sudo make install && {killall -q dwmblocks;setsid -f dwmblocks}]]
+-- vim.cmd [[autocmd BufWritePost ~/.local/src/dwm/config.h !cd ~/.local/src/dwm/; sudo make install && {killall -q dwm;setsid -f dwm}]]
+-- vim.cmd [[autocmd BufWritePost ~/.local/src/dwmblocks/blocks.h !cd ~/.local/src/dwmblocks/; sudo make install && {killall -q dwmblocks;setsid -f dwmblocks}]]
 
 -- fpc complier autorun
 vim.cmd [[autocmd BufWritePost *.pas :FPC]]
+
+-- highlight yanked text
+vim.cmd[[
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500}
+augroup END
+]]

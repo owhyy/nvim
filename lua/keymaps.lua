@@ -21,6 +21,10 @@ nnoremap("<C-j>", "<C-w>j")
 nnoremap("<C-k>", "<C-w>k")
 nnoremap("<C-l>", "<C-w>l")
 
+-- Resize
+nnoremap("<leader>+", ":exe 'resize ' . (winheight(0) * 3/2)<CR>")
+nnoremap("<leader>-", ":exe 'resize ' . (winheight(0) * 2/3)<CR>")
+
 -- Splits
 nnoremap("<leader>ws", ":split<CR>")
 nnoremap("<leader>vs", ":vsplit<CR>")
@@ -47,13 +51,18 @@ vnoremap("<leader>p", '"+p')
 nnoremap("<leader>ff", "<Cmd>Telescope find_files<CR>")
 nnoremap("<leader>fb", "<Cmd>Telescope buffers<CR>")
 nnoremap("<leader>fg", "<Cmd>Telescope live_grep<CR>")
+nnoremap("<leader>fz", "<Cmd>Telescope zk notes<CR>")
 
 -- File explorer
-nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>")  -- NvimTree
+nnoremap("<leader>e", "<Cmd>NvimTreeToggle<CR>") -- NvimTree
+
+-- Debugging shortcuts
 nnoremap("<leader>dn", ":lua require('dap-python').test_method()<CR>")
 nnoremap("<leader>df", ":lua require('dap-python').test_class()<CR>")
 nnoremap("<leader>ds", ":lua require('dap-python').debug_selection()<CR>")
 
+-- Tab tmux-like zooming
+nnoremap("<c-w>t", ":tabe %<CR>")
 -- EasyAlign
 -- xmap("ga", "<cmd>EasyAlign")
 -- nmap("ga", "<cmd>EasyAlign")
