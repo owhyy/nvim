@@ -6,3 +6,5 @@ require('ayu').setup({
 
 vim.cmd[[colorscheme zenburn]]
 -- require('ayu').colorscheme()
+-- require('no-clown-fiesta')
+-- require('ayu').colorscheme()
