@@ -7,3 +7,7 @@ vim.o.softtabstop=2
 
 vim.wo.number = true
 vim.wo.relativenumber = true
+
+-- recommended by nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
