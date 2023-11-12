@@ -5,3 +5,5 @@ for _, server in ipairs(servers) do
 	setup(server)
 end
 
+-- additional config
+require("lsp.elixir")
