@@ -1,6 +1,9 @@
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "markdown", "lua", "python", "php" },
-	highlight = {
-		enable = true,
-	},
+  ensure_installed = { "markdown", "python", "php", "elixir", "lua" },
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
+  }
 })
