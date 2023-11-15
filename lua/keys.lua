@@ -1,5 +1,6 @@
 local builtin = require("telescope.builtin")
 local zk = require("zk.commands")
+local nt = require("nvim-tree.api")
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
@@ -14,6 +15,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 	end,
 })
+
+-- NvimTree
+vim.keymap.set("n", "<leader>e", nt.tree.open, {})
 
 -- Format on F9
 vim.cmd([[nnoremap <F9> :FormatWrite<CR>]])

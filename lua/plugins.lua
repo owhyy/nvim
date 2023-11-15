@@ -20,6 +20,14 @@ require("lazy").setup({
 			require("plugins.lsp")
 		end,
 	},
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/cmp-buffer" },
+	{
+		"hrsh7th/nvim-cmp",
+		config = function()
+			require("plugins.cmp")
+		end,
+	},
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
 		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
@@ -32,6 +40,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
 		config = function()
 			require("plugins.ts")
 		end,
@@ -54,11 +63,18 @@ require("lazy").setup({
 			require("leap").add_default_mappings()
 		end,
 	},
-	"ishan9299/modus-theme-vim",
+	"miikanissi/modus-themes.nvim",
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup()
+		end,
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("nvim-tree").setup()
 		end,
 	},
 })
