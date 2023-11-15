@@ -11,6 +11,9 @@ require("formatter").setup({
 		},
 		php = {
 			require("formatter.filetypes.php").phpcbf,
-		}
+		},
+		python = {
+			require("formatter.filetypes.python").black,
+		},
 	},
 })
