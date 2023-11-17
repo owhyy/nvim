@@ -21,3 +21,8 @@ vim.keymap.set("n", "<leader>e", nt.tree.open, {})
 
 -- Format on F9
 vim.cmd([[nnoremap <F9> :FormatWrite<CR>]])
+
+vim.cmd([[nnoremap <Left> :tabprevious<CR>]])
+vim.cmd([[nnoremap <Right> :tabnext<CR>]])
+vim.cmd([[nnoremap <leader>tn :tabnew<CR>]])
+vim.api.nvim_set_keymap('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
