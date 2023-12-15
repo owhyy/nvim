@@ -13,3 +13,4 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 vim.cmd([[au TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout=300})]])
+vim.cmd([[let g:vimtex_view_method = 'zathura']])

@@ -24,7 +24,7 @@ require("lazy").setup({
 		"L3MON4D3/LuaSnip",
 		build = "make install_jsregexp",
 	},
-  {'saadparwaiz1/cmp_luasnip'},
+	{ "saadparwaiz1/cmp_luasnip" },
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "hrsh7th/cmp-buffer" },
 	{
@@ -92,6 +92,15 @@ require("lazy").setup({
 		"kylechui/nvim-surround",
 		config = function()
 			require("nvim-surround").setup({})
+		end,
+	},
+	{
+		"lervag/vimtex",
+	},
+	{
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
 		end,
 	},
 })
