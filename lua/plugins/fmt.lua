@@ -16,8 +16,13 @@ require("formatter").setup({
 			require("formatter.filetypes.python").black,
 		},
 		cpp = {
-			require("formatter.filetypes.cpp").clangformat
-
+			require("formatter.filetypes.cpp").clangformat,
+		},
+		javascript = {
+			require("formatter.filetypes.javascript").prettier,
+		},
+		javascriptreact = {
+			require("formatter.filetypes.javascriptreact").prettier,
 		},
 	},
 })
