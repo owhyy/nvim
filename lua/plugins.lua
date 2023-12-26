@@ -103,4 +103,7 @@ require("lazy").setup({
 			require("nvim-autopairs").setup({})
 		end,
 	},
+	{
+	"wakatime/vim-wakatime"
+	},
 })
