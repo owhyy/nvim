@@ -10,9 +10,9 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fz", zk.get("ZkNotes"), {})
 vim.keymap.set("n", "<leader>fl", builtin.resume, {})
 
-vim.keymap.set("n", "<leader>gs", gs.stage_hunk)
-vim.keymap.set("n", "<leader>gr", gs.reset_hunk)
-vim.keymap.set("n", "<leader>gb", gs.reset_hunk)
+vim.keymap.set("n", "<leader>hs", gs.stage_hunk)
+vim.keymap.set("n", "<leader>hb", gs.stage_buffer)
+vim.keymap.set("n", "<leader>hr", gs.reset_hunk)
 
 -- Lsp
 vim.api.nvim_create_autocmd("LspAttach", {
