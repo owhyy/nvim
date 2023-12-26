@@ -104,6 +104,9 @@ require("lazy").setup({
 		end,
 	},
 	{
-	"wakatime/vim-wakatime"
+		"wakatime/vim-wakatime",
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
 	},
 })
