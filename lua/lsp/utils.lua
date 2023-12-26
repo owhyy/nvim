@@ -3,8 +3,6 @@ local lspconfig = require("lspconfig")
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local function on_attach(client, bufnr)
-	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
 	local opts = { noremap = true, silent = true }
 
 	local function bufnnoremap(lhs, rhs)

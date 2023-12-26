@@ -14,10 +14,29 @@ cmp.setup({
 		{ name = "path" },
 	}),
 	mapping = cmp.mapping.preset.insert({
-		["<C-p>"] = cmp.mapping.select_prev_item(),
-		["<C-n>"] = cmp.mapping.select_next_item(),
+		["<C-p>"] = cmp.mapping({
+			c = function()
+				if cmp.visible() then
+					cmp.mapping.select_prev_item()
+				else
+					cmp.mapping.complete()
+				end
+			end,
+		}),
+		["<C-n>"] = cmp.mapping({
+			c = function()
+				if cmp.visible() then
+					cmp.mapping.select_next_item()
+				else
+					cmp.mapping.complete()
+				end
+			end,
+		}),
 		["<C-Space>"] = cmp.mapping.complete(),
-		["<C-e>"] = cmp.mapping.abort(),
+		["<C-g>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
 	}),
+	completion = {
+		autocomplete = false,
+	},
 })
