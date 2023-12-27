@@ -109,4 +109,7 @@ require("lazy").setup({
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
 	},
+	{
+		"hrsh7th/cmp-path",
+	},
 })
