@@ -1,5 +1,5 @@
 local setup = require("lsp.utils").setup
-local servers = { "pyright", "elixirls", "clangd", "texlab", "eslint", "ruff_lsp"}
+local servers = { "pyright", "elixirls", "clangd", "texlab", "eslint", "ruff"}
 
 for _, server in ipairs(servers) do
 	setup(server)
