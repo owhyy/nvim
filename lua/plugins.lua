@@ -69,6 +69,7 @@ require("lazy").setup({
 		end,
 	},
 	"miikanissi/modus-themes.nvim",
+	"maxmx03/solarized.nvim",
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
@@ -102,9 +103,6 @@ require("lazy").setup({
 		config = function()
 			require("nvim-autopairs").setup({})
 		end,
-	},
-	{
-		"wakatime/vim-wakatime",
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
