@@ -15,6 +15,7 @@ local function on_attach(client, bufnr)
 	bufnnoremap("gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>")
 	bufnnoremap("R", "<Cmd>lua vim.lsp.buf.rename()<CR>")
 	bufnnoremap("gr", "<Cmd>lua vim.lsp.buf.references()<CR>")
+	bufnnoremap("<M-return>", "<Cmd>lua vim.lsp.buf.code_action()<CR>")
 end
 
 function M.setup(server, ...)
