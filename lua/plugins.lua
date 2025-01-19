@@ -57,18 +57,11 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"mickael-menu/zk-nvim",
-		config = function()
-			require("plugins.zk")
-		end,
-	},
-	{
 		"ggandor/leap.nvim",
 		config = function()
 			require("leap").add_default_mappings()
 		end,
 	},
-	"miikanissi/modus-themes.nvim",
 	"maxmx03/solarized.nvim",
 	{
 		"lewis6991/gitsigns.nvim",
